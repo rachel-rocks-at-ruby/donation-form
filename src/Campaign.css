@@ -1,0 +1,115 @@
+.campaign {
+  margin: 100px auto;
+  width: 50%;
+}
+
+/* progress banner */
+.progress-banner-container {
+  margin-bottom: 10px;
+}
+
+.progress-banner {
+  background: #e3ebfc;
+  border-radius: 5px;
+  color: #356ae6;
+  padding: 8px;
+}
+
+.arrow-down {
+  width: 0; 
+  height: 0; 
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-top: 12px solid #e3ebfc;
+  position: relative;
+  left: calc(100% - 65px)
+}
+
+.card {
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 25px;
+  transition: 0.3s;
+}
+
+/* progress bar */
+.progress-container {
+  position: relative;
+  width: calc(100% + 50px);
+}
+
+.progress-bar {
+  background: #19cca3;
+  height: 12px;
+  position: absolute;
+  top: -25px;
+  left: -25px;
+  z-index: 1;
+}
+
+.progress-bar-background {
+  background: #b6f2e4;
+  border-radius: 5px 5px 0 0;
+  height: 12px;
+  position: absolute;
+  top: -25px;
+  left: -25px;
+  width: 100%;
+}
+
+.donors {
+  color: #5f667e;
+}
+
+.donor-count {
+  color: black;
+  font-weight: bold;
+}
+
+/* donation form */
+.error {
+  background: #e40e49;
+  border-radius: 5px;
+  color: white;
+  margin: 10px 0;
+  padding: 5px;
+}
+
+form {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid #ced3e0;
+  border-radius: 5px;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.input-container {
+  position: relative;
+}
+
+input {
+  border: none;
+  color: black;
+  flex-grow: 2;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 5px;
+}
+
+.dollar-sign {
+  color: #9298ad;
+  display: inline-block;
+  padding: 10px 0 5px 10px;
+}
+
+button {
+  border: 2px solid #19cca3;
+  border-radius: 0 5px 5px 0;
+  background: #19cca3;
+  color: white;
+}
+
+.donation-button-text {
+  margin: 8px 5px;
+}
