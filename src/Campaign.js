@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import "./Campaign.css";
 
 // Helpers
@@ -52,25 +52,25 @@ class Campaign extends Component {
     const progressBarBorderRadius = fullyFunded ? "5px 5px 0 0" : "5px 0 0 0";
 
     return (
-      <div className="campaign">
-        <div className="progress-banner-container">
+      <main className="campaign">
+        <section className="progress-banner-container">
           <div className="progress-banner">
             {!fullyFunded ? (
-              <div>
+              <Fragment>
                 <strong>
                   <sup>$</sup>
                   {amountLeft}
                 </strong>{" "}
                 still needed to fund this project
-              </div>
+              </Fragment>
             ) : (
               <div>Campaign is fully funded!</div>
             )}
           </div>
           <div className="arrow-down" />
-        </div>
+        </section>
 
-        <div className="card">
+        <section className="card">
           <div className="progress-container">
             <div
               className="progress-bar"
@@ -96,7 +96,7 @@ class Campaign extends Component {
               <input type="number" onChange={this.handleDonation} />
             </div>
             <button disabled={!donation} type="submit">
-              <h4 className="donation-button-text">Give Now</h4>
+              <h3 className="donation-button-text">Give Now</h3>
             </button>
             {/* <fieldset>
             <legend>Donation</legend>
@@ -105,8 +105,8 @@ class Campaign extends Component {
             </p>
           </fieldset> */}
           </form>
-        </div>
-      </div>
+        </section>
+      </main>
     );
   }
 }
