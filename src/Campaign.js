@@ -3,11 +3,12 @@ import "./Campaign.css";
 
 // Helpers
 const formatCurrency = (val) => {
-  const numberAsString = val.toString();
-  if (numberAsString.length > 3 && val > 0) {
-    return [numberAsString.slice(0, 1), ",", numberAsString.slice(-3)].join("");
+  const amounts = val.toString().split('.');
+  const cents = amounts[1] ? `.${amounts[1].slice(0, 2)}` : "";
+  if (amounts[0].length > 3 && val > 0) {
+    return [amounts[0].slice(0, 1), ",", amounts[0].slice(-3), cents].join("");
   }
-  return val;
+  return val.toFixed(2);
 };
 
 // Campaign component
@@ -93,7 +94,7 @@ class Campaign extends Component {
           <form onSubmit={this.handleSubmit}>
             <div className="input-container">
               <div className="dollar-sign">$</div>
-              <input type="number" onChange={this.handleDonation} />
+              <input type="number" onChange={this.handleDonation} step="any" />
             </div>
             <button disabled={!donation} type="submit">
               <h3 className="donation-button-text">Give Now</h3>
