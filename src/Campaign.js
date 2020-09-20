@@ -3,12 +3,11 @@ import "./Campaign.css";
 
 // Helpers
 const formatCurrency = (val) => {
-  const amounts = val.toString().split('.');
-  const cents = amounts[1] ? `.${amounts[1].slice(0, 2)}` : "";
-  if (amounts[0].length > 3 && val > 0) {
-    return [amounts[0].slice(0, 1), ",", amounts[0].slice(-3), cents].join("");
+  const amount = (Math.round(val)).toString();
+  if (amount.length > 3 && val > 0) {
+    return [amount.slice(0, 1), ",", amount.slice(-3)].join("");
   }
-  return val.toFixed(2);
+  return val;
 };
 
 // Campaign component
